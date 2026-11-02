@@ -1,0 +1,28 @@
+
+const int brakePin = 13;
+const int igSwitch = 12;
+
+int buttonState1 = 0;
+int buttonState2 = 0;
+
+
+void setup()
+{
+Serial.begin(9600);
+
+}
+void loop()
+{
+int val = analogRead(0);
+
+buttonState1 = digitalRead(brakePin);
+buttonState2 = digitalRead(igSwitch);
+
+Serial.print(val);
+Serial.print(",");
+Serial.print(buttonState1);
+Serial.print(",");
+Serial.println(buttonState2);
+delay(100);
+
+}
